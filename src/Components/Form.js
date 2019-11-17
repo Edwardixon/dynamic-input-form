@@ -1,7 +1,9 @@
 import React, {useState, useEffect} from "react";
-import Form from "./Form"
+import FormHeaderComponent from "./FormHeaderComponent";
+import FormContentComponent from "./FormContentComponent";
+import "../Styles/Form.css";
 
-function App() {
+function Form() {
   const [mainInputForm, setMainInputForm] = useState("");
   // The number of array elements represents the number if inputs 
   const [dynamicInputForms, setDynamicInputs] = useState([""]);
@@ -50,9 +52,9 @@ function App() {
 
   
   return (
-    <div className="container">
-      <button onClick={handleClick}>Display!</button>
-      <Form 
+    <div className="form">
+      <FormHeaderComponent />
+      <FormContentComponent 
         // State
         mainInputForm={mainInputForm}
         dynamicInputForms={dynamicInputForms}
@@ -66,4 +68,5 @@ function App() {
   )
 }
 
-export default App;
+
+export default Form;
